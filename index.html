@@ -23,7 +23,7 @@
  }
  
  section {
-	position:relative; 
+	position:relative;
  }
  
  
@@ -71,13 +71,13 @@ Quisque velit erat, convallis vel massa eget, consectetur egestas magna. Nunc eg
 		
 		function handlerIn(e)
 		{
-			$(this).transition({y:'-750'});	
+			$('section p').transition({y:'-750px'});	
 		}
 		
 		function handlerOut(e)
 		{
-			$(this).transition({y:'0'});
-			$(this).clearQueue();	
+			$('section p').transition({y:'0'});
+			$('section p').clearQueue();	
 		}
 	});
 </script>
