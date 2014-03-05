@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab 7 | jQuery</title>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+<style type="text/css">
+ body	{
+	font-family: 'Roboto', sans-serif;
+	font-size:0.5em/1.25;
+	font-weight:100; 
+ }
+ 
+ h1,h2,h3	{
+	font-weight:300; 
+ }
+ 
+ #wrapper	{
+	width:960px;
+	padding:20px;
+	margin:10px auto; 
+	background:#eee;
+ }
+ 
+ section {
+	position:relative; 
+ }
+ 
+ 
+ .good	{
+	color:#089; 
+ }
+</style>
+</head>
+
+<body>
+    <div id="wrapper">
+    	<h2>GWD 238 | Lab 7</h2>
+        <section>
+        	<h3>Section 1</h3>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sit amet rhoncus diam. Aenean vitae posuere metus, dapibus gravida orci. Vestibulum quis dapibus odio. Nunc odio risus, consequat nec bibendum a, facilisis sit amet diam. Integer non dolor ut est lobortis adipiscing. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vestibulum neque consequat velit auctor, non varius ante placerat. Praesent luctus fermentum sem sed ornare. Proin dictum, urna eu laoreet sagittis, est felis varius leo, pretium dapibus velit tortor vel ligula. Duis cursus nisl leo, eget mattis purus fermentum nec. Suspendisse bibendum erat turpis. Vestibulum eu volutpat dolor.
+                </p>
+                
+                <p>Suspendisse erat lorem, cursus in ornare ac, ultrices eu nulla. Maecenas elementum tristique leo, et tempus magna consectetur facilisis. Ut fermentum urna quis tellus dapibus consectetur. Sed non eros velit. Aliquam a dapibus mauris, a feugiat nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla imperdiet lacus non tincidunt pellentesque. In consequat nisl vitae risus dignissim, vitae dapibus purus porta. Aenean commodo neque et neque ultrices, a interdum eros consectetur. Nunc metus lorem, imperdiet vitae lacus eget, tristique molestie massa. Donec non consectetur urna. Fusce sit amet augue ullamcorper ligula porta tempus id quis ligula. Donec vestibulum porttitor erat at interdum. Mauris vulputate, justo sit amet facilisis semper, tortor nunc ornare metus, pellentesque porta arcu eros a nisi. Vestibulum ante odio, ultricies non porttitor a, elementum et enim.
+                </p>
+                
+                <p>
+                Quisque felis mi, pharetra id ullamcorper ut, placerat ac lectus. Donec quis tincidunt felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam rhoncus dolor nisl, in hendrerit odio eleifend at. Donec at sem lacus. Morbi sed congue est. Sed sollicitudin velit sem, non eleifend elit dapibus vitae. Nunc venenatis tellus sit amet elit interdum, vitae tempus eros ornare. Phasellus quis imperdiet tortor, in condimentum ipsum. Quisque tortor dolor, faucibus in suscipit nec, aliquam nec nunc. Nam a lacus vehicula, feugiat ligula nec, mollis nunc. Fusce auctor ligula a congue dapibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis quis ullamcorper nisi. Fusce tincidunt rhoncus quam, eget molestie ligula tempor sit amet. Vivamus scelerisque enim vel arcu congue auctor.
+                </p>
+                
+                 <p>Aenean leo lorem, ornare vel volutpat id, iaculis sed nunc. Sed nec scelerisque ipsum, nec blandit sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eu nibh id tortor ullamcorper blandit. Ut ultricies rutrum malesuada. Nam quis dui turpis. Fusce tellus purus, ultrices a dolor eget, suscipit molestie purus. Duis convallis nulla porta, sagittis lorem a, faucibus sapien. Donec pellentesque, tellus sit amet auctor tempus, nisi purus placerat mauris, quis facilisis tortor eros ut massa. Curabitur placerat purus quam, quis iaculis mauris consectetur et. Mauris id mattis tellus.
+                 </p>
+				<p>
+Quisque velit erat, convallis vel massa eget, consectetur egestas magna. Nunc egestas vitae eros sit amet tincidunt. Vestibulum gravida tincidunt urna, vel eleifend sapien ultricies vitae. Vivamus risus mi, vehicula a lacus in, mattis ornare tellus. Vivamus turpis ligula, blandit tempor dictum nec, tempor interdum felis. Aliquam pellentesque fermentum purus, ut rutrum nisi iaculis quis. Aenean vitae neque a sem pretium mollis a sit amet tortor.
+				</p>
+
+        </section>
+    </div>
+	
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.transit.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		$('section p:last').text('Welcome Jeremy! Hover here');
+		//same as using style attr
+		$('section p:first').css('color','#089');
+		$('section p:last').addClass('good');
+		$('section p:last').hover( handlerIn, handlerOut )
+		
+		function handlerIn(e)
+		{
+			$(this).transition({y:'-750'});	
+		}
+		
+		function handlerOut(e)
+		{
+			$(this).transition({y:'0'});
+			$(this).clearQueue();	
+		}
+	});
+</script>
+</body>
+</html>
